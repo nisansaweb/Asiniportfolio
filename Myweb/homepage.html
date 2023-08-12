@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<title>Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+.bgimg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('Asini.jpeg');
+  min-height: 100%;
+}
+.slider {
+      width: 100%;
+      height: auto;
+      float: center;
+    }
+    .slider img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .bgimg {
+    opacity: 0;
+    animation: fadeIn 2.5s ease-in infinite;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+</head>>
+<body>
+
+<!-- Sidebar with image -->
+<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+    <div class="bgimg"></div>
+  </nav>
+  
+  <script>
+    var bgImg = document.querySelector('.bgimg');
+    bgImg.classList.add('fade-in');
+  </script>
+
+
+<!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Hobbies</a>
+    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<div class="w3-main w3-padding-large" style="margin-left:40%">
+
+  <!-- Menu icon to open sidebar -->
+  <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+
+  <!-- Header -->
+  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+    <h1 class="w3-jumbo"><b>Asini Warnasooriya</b></h1>
+    <h2>undergraduate</h2>
+    <img src="Asini.jpeg" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
+    <img src="Asini.jpeg" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
+    <button class="w3-button w3-light-grey w3-padding-large w3-margin-top" id="downloadButton">
+      Click here to download CV
+    </button>
+  </header>
+  
+  <script>
+    var downloadButton = document.getElementById('downloadButton');
+  
+    downloadButton.addEventListener('click', function() {
+      window.location.href = 'CV of Asini Warnasooriya.pdf';
+    });
+  </script>
+  
+
+  <!-- Portfolio Section -->
+  <div class="w3-padding-32 w3-content" id="portfolio">
+    <h2 class="w3-text-grey"><b>Hobbies</b></h2>
+    <hr class="w3-opacity">
+    <!---->
+    <div class="slider">
+        <img src="Nature.jpg" alt="Nature">
+        <img src="Books.jpg" alt="Books">
+        <img src="Self learn.jpg" alt="Self Learn">
+        <img src="Watching movies.jpg" alt="Watching Movies">
+        <img src="Gardnening.jpg" alt="Gardening">
+        <img src="Music.jpg" alt="Music">
+        <img src="Food.jpg" alt="Food">
+      </div>
+      
+      <script>
+        
+        var slider = document.querySelector('.slider');
+      
+        var images = slider.querySelectorAll('img');
+      
+        var currentIndex = 0;
+        var totalImages = images.length;
+      
+        function showNextImage() {
+          images[currentIndex].style.display = 'none';
+      
+          currentIndex = (currentIndex + 1) % totalImages;
+      
+          images[currentIndex].style.display = 'block';
+        }
+      
+        for (var i = 1; i < totalImages; i++) {
+          images[i].style.display = 'none';
+        }
+      
+        setInterval(showNextImage, 2000); 
+      </script>
+      
+      <div style="height: 50px;"></div>
+      
+      <!-- About Section -->
+      <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+        <h2><b>About</b></h2>
+        <hr class="w3-opacity">
+        <p>I am Asini Nisansa Waransooriya. I am an undergraduate at the Faculty of Applied Sciences, Rajarata University of Sri Lanka. 
+          I am following the BSc. Information Technology degree of Academic Year 2019/2020. Currently, I am an active member of the Anuradhapura
+          Toastmasters Club. My ambition is to become an excellent leader and an efficient communicator in the future. Therefore, I strive to improve 
+          and inspire positive change through teaching and coaching. I enjoy creating new opportunities for upcoming generations and aim to be a 
+          good citizen serving my motherland.</p>
+      </div>
+       
+        <!---->
+    <h3 class="w3-padding-16"><b>My Skills</b></h3>
+    <p class="w3-wide">Team Work</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:95%">95%</div>
+    </div>
+    <p class="w3-wide">Public Speaking</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:85%">85%</div>
+    </div>
+    <p class="w3-wide">Leadership</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:80%">80%</div>
+    </div>
+
+    <p class="w3-wide">Graphic Designing</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:75%">75%</div>
+    </div>
+
+    <p class="w3-wide">Programming Languages</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:75%">75%</div>
+    </div><br>
+    <br>
+
+    <!-- Testimonials -->
+    <h3 class="w3-padding-24"><b>My Education</b></h3>
+    <img src="rajarata.png" alt="RajarataUni" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-text-black w3-margin-right">Rajarata University of Sri Lanka</span></p>
+    <p style="text-align: justify;">Bachelor of Science in Information Technology | June 2021 Present</p><br>
+   
+    <img src="Apura Central.jpg" alt="ApuraCentral" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-text-black w3-margin-right">Anuradhapura Central College</span></p>
+    <p>Got through G.C.E Ordinary Level Examination and Advanced Level Examination in Bio Science Stream</p><br>
+     <!-- Grid for pricing tables -->
+     <h3 class="w3-padding-16">My Research Areas</h3>
+     <div class="w3-row-padding" style="margin:0 -16px">
+       <div class="w3-half w3-margin-bottom">
+         <ul class="w3-ul w3-center w3-card w3-hover-shadow">
+           <li class="w3-dark-grey w3-xlarge w3-padding-32">Main Fields</li>
+           <li class="w3-padding-16">Data Science</li>
+           <li class="w3-padding-16">Artificial Intelligence</li>
+           <li class="w3-padding-16">Machine Learning</li>
+           <li class="w3-padding-16">Security and Privacy</li>
+           <li class="w3-padding-16">Robotics</li>
+           <li class="w3-padding-16">System and Networking</li>
+           </li>
+         </ul>
+       </div>
+ 
+       <div class="w3-half">
+         <ul class="w3-ul w3-center w3-card w3-hover-shadow">
+           <li class="w3-black w3-xlarge w3-padding-32">Other</li>
+           <li class="w3-padding-16">Food Science</li>
+           <li class="w3-padding-16">Natural Resources</li>
+           <li class="w3-padding-16">Soil Science</li>
+           <li class="w3-padding-16">Plantation</li>
+           <li class="w3-padding-16">Economics</li>
+           <li class="w3-padding-16">Sociology</li>
+           </li>
+         </ul>
+       </div>
+     <!-- End Grid/Pricing tables -->
+     </div>
+     
+   <!-- End About Section -->
+   </div>
+ 
+   <!-- Contact Section -->
+   <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
+     <h2>Contact Me</h2>
+     <hr class="w3-opacity">
+ 
+     <div class="w3-section">
+       <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Anuradhapura, Sri Lanka</p>
+       <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +94 702 698 789</p>
+       <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: warnasooriya123@gmail.com.com</p>
+     </div>
+     
+     <!-- Image of location/map -->
+     <img src="Map.PNG" class="w3-image w3-greyscale" style="width:100%;margin:32px 0">
+    
+     <p>Keep in touch with new updates. Send me a message:</p>
+     <form action="insert.php" method="POST">
+       <p><input class="w3-input w3-padding-16 w3-border" id="user_name" name = "user_name" type="text" placeholder="Name" required></p>
+       <p><input class="w3-input w3-padding-16 w3-border" id="user_email" name = "user_email" type="email" placeholder="Email" required></p>
+       <p><input class="w3-input w3-padding-16 w3-border" id="user_sub" name = "user_sub" type="text" placeholder="Subject" required></p>
+       <p><input class="w3-input w3-padding-16 w3-border" id="user_msg" name = "user_msg" type="text" placeholder="Message" required></p>
+       <p><input type="submit" name="submit" value="submit"></p>
+     </form>
+
+   <!-- End Contact Section -->
+   </div>  
+   
+   <!-- Footer -->
+   <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+     <i class="fa fa-facebook-official w3-hover-opacity"></i>
+     <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+     <i class="fa fa-twitter w3-hover-opacity"></i>
+     <i class="fa fa-linkedin w3-hover-opacity"></i>
+   <!-- End footer -->
+   </footer>
+   
+ <!-- END PAGE CONTENT -->
+ </div>
+ 
+<script>
+// Open and close sidebar
+function openNav() {
+  document.getElementById("mySidebar").style.width = "60%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
