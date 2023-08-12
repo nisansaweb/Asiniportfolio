@@ -1,2 +1,2 @@
 # Asiniportfolio
-you may find the db as myweb database.sql file
+you may find all the files inside the Myweb folder
